@@ -6,6 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let botRules = [];
     let fallbackResponses = [];
 
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+    const savedTheme = localStorage.getItem("theme");
+    if(savedTheme==="dark"){
+    document.body.classList.add("dark-mode");
+    themeIcon.textContent = "☀️";
+}
+
+    if(themeToggleBtn){
+    themeToggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const isDarkMode = document.body.classList.contains("dark-mode");
+        themeIcon.textContent = isDarkMode ? "☀️" : "🌙";
+        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    });
+}
+
     async function loadKnowledgeBase() {
         try {
             const response = await fetch('respostas.json');
