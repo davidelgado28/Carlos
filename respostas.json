@@ -1,0 +1,90 @@
+{
+  "fallbacks": [
+    "Can you explain that in other words?",
+    "Interesting... Tell me more about that.",
+    "I'm not sure I understood, but it sounds like a good technical challenge.",
+    "How does that apply to your projects?",
+    "Hmm, I don't have a rule for that yet. What do you think about adding it to my JSON?"
+  ],
+  "rules": [
+    {
+      "pattern": "(olá|oi|boas|hey|salve)",
+      "responses": [
+        "Hello! How can I help you today?",
+        "Hi there! Are you coding anything interesting?",
+        "Hey! Ready to write some lines of code?"
+      ]
+    },
+    {
+      "pattern": "meu nome é (.*)",
+      "responses": [
+        "Nice to meet you, \$1! What are you building today?",
+        "Hello \$1! Do you need help with your software architecture?"
+      ]
+    },
+    {
+      "pattern": "como (faço|fazer) (.*)",
+      "responses": [
+        "To do \$2, the approach depends on the language. Can you provide more context?",
+        "Doing \$2 requires breaking the problem down into steps. Have you tried designing the architecture first?"
+      ]
+    },
+    {
+      "pattern": "(carlinho os|sistema operativo|bootloader|limine)",
+      "responses": [
+        "Low-level operating systems? That requires a lot of C and Assembly. Limine is a fantastic bootloader!",
+        "Creating an OS like Carlinho OS is an incredible challenge! Have you set up the GDT and keyboard interrupts yet?"
+      ]
+    },
+    {
+      "pattern": "(python|go|rust|html|css|javascript|php|java)",
+      "responses": [
+        "\$1 is an excellent technology! Where are you applying it?",
+        "I really like architectures involving \$1. If you'd like, I can give you some ideas for design patterns to use."
+      ]
+    },
+    {
+      "pattern": "(aws|cloud|nuvem|certificação)",
+      "responses": [
+        "Cloud computing is the future! I recommend starting with AWS Skill Builder if you want to get the Cloud Practitioner certification.",
+        "AWS has amazing services. Have you tried deploying applications on AWS yet, or are you focusing on the theory for now?"
+      ]
+    },
+    {
+      "pattern": "(github|portfólio|repositório)",
+      "responses": [
+        "Having a 'green' and well-documented GitHub using Clean Architecture is key for recruiters.",
+        "Don't forget to add a good README.md and architecture diagrams (like the C4 Model) to your repositories!"
+      ]
+    },
+    {
+      "pattern": "estou (triste|frustrado|bloqueado|cansado)",
+      "responses": [
+        "It's totally normal to feel that way when the code won't compile. Drink some water and rest for about 10 minutes.",
+        "Debugging can really drain your energy. Explain the error to me; sometimes talking it out loud solves the problem."
+      ]
+    },
+    {
+      "pattern": "(erro|bug|não funciona|falhou)",
+      "responses": [
+        "Let's isolate the problem. What exact error log did the terminal give you?",
+        "Bugs are just unsolved puzzles. Try a `console.log` or set a breakpoint to see where the value gets lost."
+      ]
+    },
+    {
+      "pattern": "(obrigado|valeu|thanks)",
+      "responses": [
+        "You're welcome! Always at your service.",
+        "No problem! Keep up the excellent engineering work."
+      ]
+    },
+    {
+      "pattern": "(67|six seven|aura|farmar)",
+      "responses": [
+        "Now we're talking—farming aura...",
+        "Your aura is so big it's crashing my servers.",
+        "Infinite aura"
+      ]
+    }
+  ]
+}
