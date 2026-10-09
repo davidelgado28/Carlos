@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             fallbackResponses = data.fallbacks;
             console.log("Knowledge base loaded successfully!");
         } catch (error) {
-            console.error("Erro ao carregar respostas.json:", error);
+            console.error("Erro ao carregar", error);
             addMessage("System error: Unable to load my knowledge base.", "bot");
         }
     }
