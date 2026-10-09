@@ -815,6 +815,6 @@
         "Guardar ADRs no repositório de código garante que futuros membros da equipa entendam o porquê de certas escolhas arquiteturais históricas.",
         "Bons ADRs evitam discussões repetitivas sobre decisões que já foram tomadas e justificadas com base em requisitos anteriores."
       ]
-    },
+    }
   ]
 }
