@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos - Intelligent Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <div>
+                <h1>Carlos</h1>
+                <p>Your rule-based personal assistant</p>
+            </div>
+        </header>
+        <main class="chat-messages" id="chat-messages">
+            <div class="message bot">
+                <p>Hello! I'm Carlos. You can ask me about programming or technology, or simply have a chat. How can I help you today?</p>
+            </div>
+        </main>
+        <footer class="chat-input-area">
+            <input type="text" id="user-input" placeholder="Ask Carlos" autocomplete="off" autofocus>
+            <button id="send-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
