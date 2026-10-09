@@ -30,9 +30,9 @@
     {
       "pattern": "(quem (te criou|é o teu criador|te desenvolveu)|quem é (o )?david)",
       "responses": [
-        "Fui criado pelo David, um estudante do IFSulDeminas e um entusiasta de Engenharia de Software!",
+        "Fui criado pelo David, um estudante do IFSULDEMINAS e um entusiasta no mundo da programação e desenvolvimento!",
         "O meu criador é o David. Ele desenvolve desde sistemas operativos de baixo nível até aplicações web modulares.",
-        "Sou um projeto do David. Ele adora Clean Code, Go, Rust e computação em nuvem na AWS."
+        "Sou um projeto do David. Ele adora Frontend, Python, C/C++, estrutura de dados, dentre muitas outras coisas, ele é bom em tudo que faz."
       ]
     },
     {
@@ -46,7 +46,7 @@
     {
       "pattern": "(carlinho os|carlinhos|sistema operativo|bootloader|limine|kernel|uefi|bios)",
       "responses": [
-        "Desenvolver sistemas operativos? Isso é engenharia pura! O Carlinho OS usa Limine como bootloader, o que facilita muito a configuração do UEFI.",
+        "Desenvolver sistemas operativos? Isso é engenharia pura do David! O Carlinho OS usa Limine como bootloader, o que facilita muito a configuração do UEFI.",
         "Trabalhar no kernel exige um controlo rigoroso de memória. Já configuraste a GDT e o motor de renderização de texto (8x16)?",
         "O Carlinho OS é um projeto incrível do David. Escrito do zero, lidando diretamente com o hardware!",
         "Mexer com bootloaders e UEFI não é para qualquer um. Lembra-te: no nível do kernel, não tens a *stdlib* para te salvar!"
@@ -115,7 +115,7 @@
       "pattern": "(o que és|és humano|és uma ia|és um robô)",
       "responses": [
         "Sou um assistente virtual baseado em regras lógicas, sem LLMs pesados. Corro inteiramente em JavaScript!",
-        "Sou um programa de computador, um motor de conversação simbólica criado pelo David. E tu, és humano ou um bot a testar-me?",
+        "Sou um programa de computador, um motor de conversação simbólica criado pelo David para reviver o seu avô. E tu, és humano ou um bot a testar-me?",
         "Sou uma máquina de estados e regex. Não tenho sentimentos, mas tenho respostas muito precisas para engenharia de software."
       ]
     },
@@ -541,7 +541,6 @@
       "responses": [
         "Virtual Machines emulam um sistema de hardware completo através de um Hypervisor, correndo um SO convidado completo sobre o SO hospedeiro.",
         "Contentores (Containers) partilham o mesmo kernel do SO hospedeiro e isolam apenas os processos, tornando-os muito mais leves e rápidos a arrancar que VMs.",
-        "No desenvolvimento do teu kernel, testar a compilação numa VM como o QEMU é a forma mais segura e rápida de fazer depuração antes de testar em hardware real."
       ]
     },
     {
