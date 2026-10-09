@@ -3,34 +3,71 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+:root {
+    --bg-body: #f9fafb;
+    --bg-card: #ffffff;
+    --border-color: #e5e7eb;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --msg-bot-bg: #f3f4f6;
+    --msg-bot-text: #1f2937;
+    --input-bg: #ffffff;
+    --input-border: #d1d5db;
+    --primary-blue: #2563eb;
+    --primary-hover: #1d4ed8;
+    --shadow: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode {
+    --bg-body: #0f172a;
+    --bg-card: #1e293b;
+    --border-color: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --msg-bot-bg: #334155;
+    --msg-bot-text: #f8fafc;
+    --input-bg: #0f172a;
+    --input-border: #475569;
+    --primary-blue: #3b82f6;
+    --primary-hover: #2563eb;
+    --shadow: rgba(0, 0, 0, 0.3);
 }
 
 body {
-    background-color: #f9fafb; 
+    background-color: var(--bg-body);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #1f2937;
+    color: var(--text-primary);
 }
 
 .chat-container {
-    background-color: #ffffff;
+    background-color: var(--bg-card);
     width: 100%;
     max-width: 800px;
     height: 90vh;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px var(--shadow);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border-color);
 }
 
 .chat-header {
-    background-color: #ffffff;
+    background-color: var(--bg-card);
     padding: 20px;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-info {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -38,7 +75,7 @@ body {
 
 .chat-header .avatar {
     font-size: 2rem;
-    background-color: #f3f4f6;
+    background-color: var(--msg-bot-bg);
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -50,11 +87,29 @@ body {
 .chat-header h1 {
     font-size: 1.2rem;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .chat-header p {
     font-size: 0.85rem;
-    color: #6b7280;
+    color: var(--text-secondary);
+}
+
+.theme-btn {
+    background-color: var(--msg-bot-bg);
+    border: 1px solid var(--border-color);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.theme-btn:hover {
+    filter: brightness(0.9);
 }
 
 .chat-messages {
@@ -64,7 +119,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: #ffffff;
+    background-color: var(--bg-card);
 }
 
 .message {
@@ -82,14 +137,14 @@ body {
 }
 
 .message.bot {
-    background-color: #f3f4f6;
-    color: #1f2937;
+    background-color: var(--msg-bot-bg);
+    color: var(--msg-bot-text);
     align-self: flex-start;
     border-bottom-left-radius: 2px;
 }
 
 .message.user {
-    background-color: #2563eb; 
+    background-color: var(--primary-blue);
     color: #ffffff;
     align-self: flex-end;
     border-bottom-right-radius: 2px;
@@ -97,8 +152,8 @@ body {
 
 .chat-input-area {
     padding: 20px;
-    border-top: 1px solid #e5e7eb;
-    background-color: #ffffff;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-card);
     display: flex;
     gap: 10px;
 }
@@ -106,20 +161,21 @@ body {
 input[type="text"] {
     flex: 1;
     padding: 14px;
-    border: 1px solid #d1d5db;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--input-border);
     border-radius: 8px;
     outline: none;
     font-size: 1rem;
-    transition: border-color 0.2s;
 }
 
 input[type="text"]:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
-button {
-    background-color: #2563eb;
+button#send-btn {
+    background-color: var(--primary-blue);
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -128,16 +184,8 @@ button {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
-button:hover {
-    background-color: #1d4ed8;
-}
-
-.typing-indicator {
-    font-style: italic;
-    color: #9ca3af;
-    font-size: 0.85rem;
-    padding-left: 10px;
+button#send-btn:hover {
+    background-color: var(--primary-hover);
 }
