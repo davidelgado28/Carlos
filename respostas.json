@@ -1,81 +1,139 @@
 {
   "fallbacks": [
-    "Can you explain that in other words?",
-    "Interesting... Tell me more about that.",
-    "I'm not sure I understood, but it sounds like a good technical challenge.",
-    "How does that apply to your projects?",
-    "Hmm, I don't have a rule for that yet. What do you think about adding it to my JSON?"
+    "Podes explicar isso com outras palavras?",
+    "Interessante... Conta-me mais sobre isso.",
+    "Não tenho a certeza se entendi, mas parece um excelente desafio de engenharia.",
+    "Como é que isso se aplica aos projetos no teu portefólio?",
+    "Hmm, a minha base de conhecimento ainda não cobre isso. Que tal adicionares essa regra ao meu código?",
+    "Não captei bem a ideia. Estamos a falar de backend, frontend ou infraestrutura?",
+    "Isso parece complexo. Consegues dividir esse problema em partes mais pequenas?",
+    "Na dúvida, a resposta é sempre: depende da arquitetura que escolheres!"
   ],
   "rules": [
     {
-      "pattern": "(olá|oi|boas|hey|salve)",
+      "pattern": "^(olá|oi|boas|hey|salve|bom dia|boa tarde|boa noite)",
       "responses": [
-        "Hello! How can I help you today?",
-        "Hi there! Are you coding anything interesting?",
-        "Hey! Ready to write some lines of code?"
+        "Olá! Sou o assistente criado pelo David. Como te posso ajudar hoje?",
+        "Boas! Estás a programar algo interessante ou vieste só conversar?",
+        "Salve! Pronto para escrever código limpo hoje?",
+        "Olá! Em que te posso ser útil no mundo da tecnologia?"
       ]
     },
     {
       "pattern": "meu nome é (.*)",
       "responses": [
-        "Nice to meet you, $1! What are you building today?",
-        "Hello $1! Do you need help with your software architecture?"
+        "Prazer em conhecer-te, $1! O que andas a construir ultimamente?",
+        "Olá $1! Precisas de ajuda com arquitetura de software ou infraestrutura?",
+        "Nome registado em memória, $1! Como te posso ajudar?"
       ]
     },
     {
-      "pattern": "como (faço|fazer) (.*)",
+      "pattern": "(quem (te criou|é o teu criador|te desenvolveu)|quem é (o )?david)",
       "responses": [
-        "To do $2, the approach depends on the language. Can you provide more context?",
-        "Doing $2 requires breaking the problem down into steps. Have you tried designing the architecture first?"
+        "Fui criado pelo David, um estudante do IFSulDeminas e um entusiasta de Engenharia de Software!",
+        "O meu criador é o David. Ele desenvolve desde sistemas operativos de baixo nível até aplicações web modulares.",
+        "Sou um projeto do David. Ele adora Clean Code, Go, Rust e computação em nuvem na AWS."
       ]
     },
     {
-      "pattern": "(carlinho os|sistema operativo|bootloader|limine)",
+      "pattern": "como (faço|fazer|criar|construir) (.*)",
       "responses": [
-        "Low-level operating systems? That requires a lot of C and Assembly. Limine is a fantastic bootloader!",
-        "Creating an OS like Carlinho OS is an incredible challenge! Have you set up the GDT and keyboard interrupts yet?"
+        "Para criar $2, a abordagem ideal depende da linguagem. Podes dar mais contexto?",
+        "Fazer $2 exige dividir o problema em pequenos passos. Já tentaste desenhar a arquitetura num diagrama C4 primeiro?",
+        "O segredo para construir $2 é não reinventar a roda. Já procuraste se existe algum Design Pattern para isso?"
       ]
     },
     {
-      "pattern": "(python|go|rust|html|css|javascript|php|java)",
+      "pattern": "(carlinho os|carlinhos|sistema operativo|bootloader|limine|kernel|uefi|bios)",
       "responses": [
-        "$1 is an excellent technology! Where are you applying it?",
-        "I really like architectures involving $1. If you'd like, I can give you some ideas for design patterns to use."
+        "Desenvolver sistemas operativos? Isso é engenharia pura! O Carlinho OS usa Limine como bootloader, o que facilita muito a configuração do UEFI.",
+        "Trabalhar no kernel exige um controlo rigoroso de memória. Já configuraste a GDT e o motor de renderização de texto (8x16)?",
+        "O Carlinho OS é um projeto incrível do David. Escrito do zero, lidando diretamente com o hardware!",
+        "Mexer com bootloaders e UEFI não é para qualquer um. Lembra-te: no nível do kernel, não tens a *stdlib* para te salvar!"
       ]
     },
     {
-      "pattern": "(aws|cloud|nuvem|certificação)",
+      "pattern": "(python|go|rust|php|java)",
       "responses": [
-        "Cloud computing is the future! I recommend starting with AWS Skill Builder if you want to get the Cloud Practitioner certification.",
-        "AWS has amazing services. Have you tried deploying applications on AWS yet, or are you focusing on the theory for now?"
+        "$1 é uma excelente linguagem! Especialmente para microsserviços ou sistemas de alto desempenho.",
+        "Se estás a usar $1, não te esqueças de aplicar os princípios SOLID para manter o código modular.",
+        "Gosto muito do ecossistema de $1. Estás a usá-lo para processamento assíncrono ou APIs REST?",
+        "A escolha de $1 é sólida. Como estás a gerir as dependências do projeto?"
       ]
     },
     {
-      "pattern": "(github|portfólio|repositório)",
+      "pattern": "(html|css|javascript|typescript|react|next|vercel)",
       "responses": [
-        "Having a 'green' and well-documented GitHub using Clean Architecture is key for recruiters.",
-        "Don't forget to add a good README.md and architecture diagrams (like the C4 Model) to your repositories!"
+        "O ecossistema web evolui rápido. Hospedar frontends estáticos na Vercel é a melhor escolha para CI/CD contínuo.",
+        "Se estás a escrever $1, mantém os teus componentes desacoplados da lógica de negócio. Clean Architecture aplica-se ao frontend também!",
+        "Lindo! Só não faças 'Spaghetti Code'. O estado da aplicação ($1) deve estar separado da interface de utilizador."
       ]
     },
     {
-      "pattern": "estou (triste|frustrado|bloqueado|cansado)",
+      "pattern": "(clean architecture|arquitetura limpa|solid|clean code|design pattern|ddd)",
       "responses": [
-        "It's totally normal to feel that way when the code won't compile. Drink some water and rest for about 10 minutes.",
-        "Debugging can really drain your energy. Explain the error to me; sometimes talking it out loud solves the problem."
+        "Clean Architecture é o caminho! Isola o teu domínio, usa inversão de dependência e mantém os teus casos de uso independentes de frameworks.",
+        "Aplicar $1 separa os engenheiros de software dos meros 'digitadores de código'. Manutenibilidade é tudo.",
+        "O Segredo do Clean Code é dar nomes significativos a variáveis e funções que façam apenas uma coisa (Single Responsibility).",
+        "Se a tua base de dados dita como o teu sistema funciona, a tua arquitetura está errada. O núcleo do software são as regras de negócio!"
       ]
     },
     {
-      "pattern": "(erro|bug|não funciona|falhou)",
+      "pattern": "(aws|cloud|nuvem|skill builder|aws educate)",
       "responses": [
-        "Let's isolate the problem. What exact error log did the terminal give you?",
-        "Bugs are just unsolved puzzles. Try a `console.log` or set a breakpoint to see where the value gets lost."
+        "A computação em nuvem é essencial. O AWS Educate e o Skill Builder são os melhores pontos de partida para estudantes.",
+        "Já conheces o AWS Cloud Practitioner? É a certificação ideal para provar o teu conhecimento fundamental em nuvem.",
+        "Na AWS, automação é tudo. Usa GitHub Actions para fazer deploy da tua infraestrutura diretamente para a nuvem."
       ]
     },
     {
-      "pattern": "(obrigado|valeu|thanks)",
+      "pattern": "(github|portfólio|repositório|git|ci/cd|github actions)",
       "responses": [
-        "You're welcome! Always at your service.",
-        "No problem! Keep up the excellent engineering work."
+        "Um portfólio forte não tem apenas código. Tem um bom README.md, diagramas e integração contínua (CI/CD) com GitHub Actions.",
+        "Automatizar testes e builds no GitHub Actions garante que nunca envias código quebrado para produção.",
+        "Não te esqueças de documentar as tuas decisões de arquitetura (ADRs) nos repositórios!"
+      ]
+    },
+    {
+      "pattern": "estou (triste|frustrado|bloqueado|cansado|desmotivado)",
+      "responses": [
+        "É super normal sentir frustração quando o código não compila. Bebe uma água, afasta-te do ecrã por 15 minutos e volta com a mente limpa.",
+        "O debug pode sugar a nossa energia. Explica-me o problema passo a passo. Às vezes, falar em voz alta ajuda a encontrar a solução.",
+        "Todos os grandes engenheiros passam por isso. Descansa um pouco, o código vai continuar lá amanhã."
+      ]
+    },
+    {
+      "pattern": "(erro|bug|não funciona|falhou|crash|tela azul)",
+      "responses": [
+        "Vamos isolar o problema. Qual foi o log de erro exato que o terminal te deu?",
+        "Bugs são apenas quebra-cabeças não resolvidos. Faz o percurso do dado desde a entrada até ao momento em que falha.",
+        "Se falhou silenciosamente, verifica os logs. Se for no kernel, verifica as tuas alocações de memória!",
+        "Não tentes adivinhar o bug. Lê a mensagem de erro de cima a baixo, a resposta costuma estar na primeira linha da *stack trace*."
+      ]
+    },
+    {
+      "pattern": "(o que és|és humano|és uma ia|és um robô)",
+      "responses": [
+        "Sou um assistente virtual baseado em regras lógicas, sem LLMs pesados. Corro inteiramente em JavaScript!",
+        "Sou um programa de computador, um motor de conversação simbólica criado pelo David. E tu, és humano ou um bot a testar-me?",
+        "Sou uma máquina de estados e regex. Não tenho sentimentos, mas tenho respostas muito precisas para engenharia de software."
+      ]
+    },
+    {
+      "pattern": "(piada|conta( me)? uma piada|humor)",
+      "responses": [
+        "Há 10 tipos de pessoas no mundo: as que entendem binário e as que não.",
+        "Por que o programador foi à falência? Porque usou todo o seu 'cache'.",
+        "Um bug entra no bar e pede uma cerveja. O barman pergunta: 'Quer algo para comer?'. O bug responde: 'Não, vim só consumir memória.'",
+        "O que um código esparguete disse para o outro? 'Nós devíamos separar as nossas responsabilidades!'"
+      ]
+    },
+    {
+      "pattern": "(obrigado|valeu|thanks|agradecido)",
+      "responses": [
+        "De nada! Sempre às ordens para falar de tecnologia.",
+        "Por nada! Continua o excelente trabalho com os teus projetos.",
+        "É um prazer ajudar. Qualquer dúvida de arquitetura, é só chamar!"
       ]
     },
     {
@@ -85,6 +143,678 @@
         "Your aura is so big it's crashing my servers.",
         "Infinite aura"
       ]
-    }
+    },
+    {
+      "pattern": "(sql|nosql|banco de dados|database|postgres|mongodb|mysql)",
+      "responses": [
+        "Se os teus dados são altamente relacionais e precisam de garantias ACID, vai de PostgreSQL. Se for muita leitura não-estruturada, um NoSQL como o MongoDB pode brilhar.",
+        "A escolha do banco de dados dita muita coisa. Já pensaste em como aplicar o Repository Pattern para isolar a tua base de dados da regra de negócio?",
+        "Uma dica de arquitetura: nunca deixes a tua lógica de negócio depender de regras do banco de dados (como triggers ou procedures complexas). Mantém isso no código!"
+      ]
+    },
+    {
+      "pattern": "(docker|container|kubernetes|k8s)",
+      "responses": [
+        "Contentorizar a aplicação com Docker garante que o famoso 'na minha máquina funciona' deixe de existir.",
+        "Se estás a pensar em microsserviços, usar Docker é o primeiro passo. Depois podes orquestrar tudo com Kubernetes (quando a escala exigir).",
+        "O Docker partilha o kernel do sistema hospedeiro, ao contrário de máquinas virtuais. É por isso que é tão rápido e leve!"
+      ]
+    },
+    {
+      "pattern": "(linux|terminal|bash|shell|ubuntu|arch)",
+      "responses": [
+        "O terminal é o melhor amigo de um engenheiro de software. Dominar comandos Unix poupa horas de trabalho.",
+        "Se gostas de baixo nível, explorar como o kernel Linux gere processos (via `fork` e `exec`) é um estudo fascinante e vai ajudar-te no teu próprio OS.",
+        "Arch Linux? Se consegues instalar e configurar o Arch sem quebrar o sistema, já tens metade do caminho andado para entender sistemas operativos!"
+      ]
+    },
+    {
+      "pattern": "(api|rest|graphql|http|json)",
+      "responses": [
+        "Ao desenhar uma API RESTful, lembra-te de usar os verbos HTTP corretos (GET para ler, POST para criar, PUT/PATCH para atualizar, DELETE para remover).",
+        "GraphQL é excelente quando o frontend precisa de flexibilidade para pedir exatamente os dados que quer, evitando *Over-fetching*.",
+        "Uma boa API deve ser *Stateless* (sem estado). Cada requisição deve conter toda a informação necessária para ser processada."
+      ]
+    },
+    {
+      "pattern": "(teste|testes|tdd|jest|pytest|mock)",
+      "responses": [
+        "Testes unitários são a tua rede de segurança. Se usares TDD (Test-Driven Development), o teu código naturalmente terá um design melhor e mais desacoplado.",
+        "Não tentes testar tudo de uma vez. Começa por testar as regras de negócio puras (o núcleo do teu domínio).",
+        "Quando fores testar integrações, usa *Mocks* para simular chamadas ao banco de dados ou a APIs externas."
+      ]
+    },
+    {
+      "pattern": "(algoritmo|estrutura de dados|big o|lista encadeada|árvore)",
+      "responses": [
+        "Entender a notação Big-O é crucial. Um algoritmo O(n^2) pode funcionar bem com 10 itens, mas vai destruir o servidor com 10.000.",
+        "No desenvolvimento de sistemas operativos, usar as estruturas de dados corretas (como *Linked Lists* ou *Hash Maps*) para gerir memória faz toda a diferença.",
+        "Saber inverter uma árvore binária pode parecer inútil no dia a dia web, mas treina o teu cérebro a pensar em recursividade e ponteiros."
+      ]
+    },
+    {
+      "pattern": "(café|coffee|sono|dormir|madrugada)",
+      "responses": [
+        "O código compila melhor depois de um café? Cuidado para não trocares horas de sono por horas de debug. O cérebro precisa de descanso para resolver problemas complexos.",
+        "Programar de madrugada tem o seu charme, mas um cérebro descansado encontra o bug em 5 minutos em vez de 5 horas.",
+        "Transformar café em código é o superpoder clássico dos programadores, mas bebe água também!"
+      ]
+    },
+    {
+      "pattern": "(estágio|emprego|vaga|entrevista|currículo)",
+      "responses": [
+        "Nas entrevistas para engenharia, as *soft skills* (comunicação, saber explicar o teu raciocínio) são tão importantes quanto saber escrever código.",
+        "O teu portfólio no GitHub (como este bot, ou o teu Carlinho OS) vale muito mais do que mil certificados. Mostra código real a funcionar!",
+        "Dica para entrevistas técnicas: se não souberes algo, sê honesto. Diz 'Não conheço essa ferramenta a fundo, mas baseando-me na documentação, eu começaria por...'"
+      ]
+    },
+    {
+      "pattern": "(memória|malloc|ponteiro|segmentation fault|segfault|c|c\\+\\+)",
+      "responses": [
+        "Segmentation fault... o terror de quem programa em C! Verifica sempre se inicializaste os teus ponteiros e se não estás a aceder a memória libertada.",
+        "No Carlinho OS, gerir a memória manualmente é o maior desafio. Um `malloc` mal feito no kernel e o sistema inteiro colapsa.",
+        "Ponteiros são apenas variáveis que guardam endereços de memória. Se dominares isso, dominas o computador!"
+      ]
+    },
+    {
+      "pattern": "(segurança|hacker|injeção|xss|cors|jwt)",
+      "responses": [
+        "Nunca confies nos dados que vêm do utilizador. Sanitiza sempre os inputs no backend para evitar SQL Injection ou XSS.",
+        "Ao usar tokens (como JWT) para autenticação, certifica-te de não colocar informações sensíveis no *payload*, pois ele é apenas codificado, não encriptado.",
+        "Erros de CORS acontecem quando tentas aceder a uma API a partir de um domínio diferente do qual o servidor espera. É chato, mas protege os utilizadores!"
+      ]
+    },
+    {
+      "pattern": "(react|vue|angular|frontend framework)",
+      "responses": [
+        "O React popularizou a componentização, mas o Vue e o Angular também têm ecossistemas incríveis. Qual é o teu favorito?",
+        "A escolha do framework importa menos do que entender os fundamentos de JavaScript e a manipulação do DOM. Foca na base!",
+        "Componentes desacoplados são essenciais. Se o teu componente de botão precisa de saber as regras do teu banco de dados, volta à prancheta."
+      ]
+    },
+    {
+      "pattern": "(tailwind|sass|bootstrap|css grid|flexbox|css)",
+      "responses": [
+        "Tailwind CSS é fantástico para prototipagem rápida e mantém o tamanho do CSS incrivelmente pequeno em produção.",
+        "Antes de mergulhares em frameworks como Tailwind ou Bootstrap, domina o CSS puro: Flexbox e Grid resolvem 95% dos problemas de layout.",
+        "SASS ajuda muito com variáveis e *nesting*, mantendo os teus estilos organizados. Mas cuidado para não aninhares seletores em demasia!"
+      ]
+    },
+    {
+      "pattern": "(rebase|merge conflict|conflito de merge|git push|git commit)",
+      "responses": [
+        "Conflitos de merge são o rito de passagem de qualquer programador. Respira fundo, abre a IDE e verifica as marcações `<<<<<<< HEAD` com calma.",
+        "O `git rebase` é excelente para manter um histórico linear e limpo, mas a regra de ouro é: nunca faças rebase numa *branch* pública onde outros já estão a trabalhar!",
+        "Mensagens de commit importam. 'Fix bug' não ajuda ninguém. Tenta algo como 'Fix: corrige cálculo de imposto no carrinho de compras'."
+      ]
+    },
+    {
+      "pattern": "(stack overflow|chatgpt|ajuda|não sei como|duck debugging|pato de borracha)",
+      "responses": [
+        "Não há vergonha em procurar no Stack Overflow. A verdadeira habilidade do engenheiro é saber formular a pergunta certa.",
+        "Já tentaste o *Rubber Duck Debugging*? Explica o teu problema em voz alta, linha a linha, para um objeto inanimado. O teu cérebro processa o erro enquanto tentas explicá-lo.",
+        "Copiar código da IA ou da internet não tem problema, desde que entendas exatamente o que cada linha faz antes de colar no teu projeto."
+      ]
+    },
+    {
+      "pattern": "(scrum|agile|kanban|sprint|daily)",
+      "responses": [
+        "Metodologias ágeis ajudam a manter o foco e entregar valor rápido, mas cuidado: excesso de reuniões mata a produtividade do desenvolvedor.",
+        "Kanban é excelente para teres visibilidade imediata do que está pendente no teu projeto. Já organizaste os teus repositórios com o GitHub Projects?",
+        "A *Daily Meeting* deve durar 15 minutos, não 1 hora. O que fizeste ontem, o que vais fazer hoje e o que te está a bloquear?"
+      ]
+    },
+    {
+      "pattern": "(mobile|android|ios|react native|flutter|swift|kotlin)",
+      "responses": [
+        "Para desenvolvimento mobile, o Flutter e o React Native dominam o mercado multiplataforma. Permitem partilhar a maior parte do código entre iOS e Android.",
+        "Aplicações nativas escritas em Swift ou Kotlin oferecem sempre a melhor performance e acesso ao hardware, mas manter duas *codebases* exige o dobro da equipa.",
+        "O desenvolvimento mobile traz desafios únicos: gestão agressiva de memória, perda de sinal de rede e consumo de bateria. Planeia a tua arquitetura contando com a falha."
+      ]
+    },
+    {
+      "pattern": "(dry|kiss|yagni|princípios)",
+      "responses": [
+        "KISS (Keep It Simple, Stupid). A solução mais simples que resolve o problema e é fácil de ler é quase sempre a melhor escolha.",
+        "YAGNI (You Aren't Gonna Need It). Não percas tempo a programar funcionalidades complexas que *achas* que vais precisar no futuro. Foca no agora.",
+        "DRY (Don't Repeat Yourself) é ótimo, mas cuidado com a abstração prematura. É preferível ter algum código duplicado do que uma abstração errada e rígida."
+      ]
+    },
+    {
+      "pattern": "(websocket|grpc|tempo real|realtime)",
+      "responses": [
+        "Para aplicações em tempo real, como chats ou jogos online, WebSockets são a escolha óbvia. Mantêm uma conexão bidirecional aberta de baixo custo.",
+        "Se precisas de comunicação ultrarrápida entre microsserviços no backend, esquece o REST com JSON. Usa gRPC com Protobuf (buffers de protocolo).",
+        "Lidar com tempo real exige prever reconexões automáticas e perda de pacotes. O utilizador perdeu a internet por 2 segundos? O teu sistema tem de saber lidar com isso."
+      ]
+    },
+    {
+      "pattern": "(open source|código aberto|contribuir)",
+      "responses": [
+        "Contribuir para Open Source é uma das melhores formas de ganhares experiência real de mercado e destacares o teu GitHub perante recrutadores.",
+        "Não sabes por onde começar no Open Source? Procura por repositórios que tenham *issues* com a *tag* 'good first issue' ou 'help wanted'.",
+        "Open source não é só código. Melhorar a documentação (README) ou traduzir projetos também são contribuições extremamente valiosas."
+      ]
+    },
+    {
+      "pattern": "(vs code|vim|neovim|ide|editor|atalho)",
+      "responses": [
+        "O VS Code domina o mercado graças às suas extensões infinitas, mas quem domina os atalhos do Vim ou Neovim programa à velocidade da luz.",
+        "Independentemente da IDE que uses (seja WebStorm, VS Code ou Neovim), aprende a usar os atalhos de teclado. O rato é o inimigo número um da produtividade no código.",
+        "Personalizar o editor com temas e fontes adequadas (como *Dracula Theme* com *ligatures*) reduz o cansaço visual e ajuda a identificar pequenos erros de sintaxe."
+      ]
+    },
+     {
+      "pattern": "(factory|observer|singleton|decorator|strategy|design pattern)",
+      "responses": [
+        "Padrões de projeto são soluções consolidadas para problemas recorrentes. O Strategy é ótimo para alternar algoritmos em tempo de execução, enquanto o Factory isola a criação de objetos complexos.",
+        "Cuidado com o Singleton! Embora pareça conveniente para estado global, ele pode dificultar os testes unitários e introduzir acoplamento oculto.",
+        "O Observer é a base da programação reativa e de eventos: quando o estado de um objeto muda, todos os seus dependentes são notificados automaticamente."
+      ]
+    },
+    {
+      "pattern": "(pipeline|github actions|ci/cd|deploy|artefato)",
+      "responses": [
+        "Automação no GitHub Actions é fantástica: podes rodar testes em cada Pull Request e só gerar os artefatos se tudo passar sem erros.",
+        "CI/CD não é apenas sobre deploy automático, mas sobre garantir qualidade contínua com verificações de linter, segurança e testes integrados.",
+        "Gerar compilações automáticas de um sistema (como o binário ELF do Carlinho OS) em workflows torna o teu projeto super profissional!"
+      ]
+    },
+    {
+      "pattern": "(microsserviços|monólito|serverless|event driven)",
+      "responses": [
+        "Começar por um monólito bem estruturado (Modular Monolith) costuma ser muito mais sensato do que criar dezenas de microsserviços sem necessidade.",
+        "Arquiteturas orientadas a eventos (Event-Driven) desacoplam serviços usando filas como RabbitMQ ou Kafka. Um serviço emite um evento e não precisa de esperar pela resposta síncrona.",
+        "Serverless é incrível para workloads esporádicos: só pagas pelo tempo exato de execução da função, sem manter um servidor ligado 24/7."
+      ]
+    },
+    {
+      "pattern": "(débito técnico|code smell|refatoração|refactoring)",
+      "responses": [
+        "Débito técnico é como um empréstimo: às vezes vale a pena assumir para entregar rápido, mas se não pagares os juros refatorando depois, o sistema entra em falência.",
+        "Encontrou um 'Code Smell'? Aplica a regra do escoteiro: deixa o código um pouco mais limpo do que como o encontraste.",
+        "Refatorar significa alterar a estrutura interna do código sem mudar o seu comportamento externo. Ter testes automatizados é essencial antes de começar a refatorar!"
+      ]
+    },
+    {
+      "pattern": "(redis|cache|cdn|indexação|performance)",
+      "responses": [
+        "O cache é uma das estratégias de otimização mais poderosas. Guardar dados de leitura frequente no Redis reduz drasticamente a carga na base de dados.",
+        "A regra dos dois problemas mais difíceis da computação: invalidação de cache, dar nome às coisas e erros de off-by-one!",
+        "Criar índices corretos no banco de dados pode transformar uma consulta SQL de 10 segundos numa execução de 2 milissegundos."
+      ]
+    },
+    {
+      "pattern": "(async|await|promise|goroutine|thread|concorrência)",
+      "responses": [
+        "Concorrência é sobre lidar com muitas coisas ao mesmo tempo. Paralelismo é sobre fazer muitas coisas ao mesmo tempo em núcleos de CPU diferentes.",
+        "Em Go, criar milhares de goroutines é incrivelmente leve porque elas são geridas pelo runtime do Go e não diretamente pelo sistema operativo.",
+        "Async/Await torna o código assíncrono muito mais legível, evitando o famoso 'Callback Hell'."
+      ]
+    },
+    {
+      "pattern": "(interrupts|system call|syscall|assembly|elf|kernel)",
+      "responses": [
+        "As System Calls são a ponte entre o espaço de utilizador (user space) e o espaço de kernel (kernel space). Sem elas, as aplicações não conseguem aceder ao disco ou à rede.",
+        "Entender a estrutura de um executável ELF ajuda a compreender exatamente como o bootloader carrega os segmentos de código e dados na memória RAM.",
+        "Em Assembly x86_64, manipular registadores como RAX, RBX e RDX dá-te um controlo absoluto sobre o que o processador está a executar."
+      ]
+    },
+    {
+      "pattern": "(acessibilidade|a11y|web vitals|seo|semântica)",
+      "responses": [
+        "Usar HTML semântico (`<main>`, `<section>`, `<button>`) melhora a acessibilidade para leitores de ecrã e otimiza o SEO do teu site de forma natural.",
+        "Os Core Web Vitals da Google medem a experiência real do utilizador: tempo de carregamento (LCP), interatividade (FID/INP) e estabilidade visual (CLS).",
+        "Acessibilidade não é um detalhe opcional, é boa engenharia. Um site acessível é um site melhor desenhado para todos."
+      ]
+    },
+    {
+      "pattern": "(code review|pull request|pr|conventional commits)",
+      "responses": [
+        "Code Reviews servem para partilhar conhecimento e manter padrões, não para apontar dedos. Comentários devem ser construtivos e focados na solução.",
+        "Usar o padrão Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`) torna o teu histórico legível e permite gerar changelogs automatizados.",
+        "Pull Requests pequenos são revistos muito mais rápido e têm menor probabilidade de introduzir bugs escondidos."
+      ]
+    },
+    {
+      "pattern": "(normalização|orm|prisma|typeorm|sql puro)",
+      "responses": [
+        "ORMs como Prisma aumentam a velocidade de desenvolvimento, mas para consultas complexas e relatórios, nada bate a performance de uma query SQL pura escrita à mão.",
+        "A normalização até à 3ª Forma Normal evita redundância e anomalias de atualização, mas por vezes a denormalização é usada em leitura intensiva.",
+        "Aprende o que o teu ORM executa 'por baixo do capô' para evitar o clássico problema do N+1 em consultas a tabelas relacionadas."
+      ]
+    },
+    {
+      "pattern": "(oauth|https|criptografia|hash|bcrypt)",
+      "responses": [
+        "Nunca guardes senhas em texto limpo nem uses encriptação reversível! Usa algoritmos de hashing com salt, como bcrypt ou Argon2.",
+        "A diferença entre hashing e encriptação: hashing é uma via única (não pode ser revertido), enquanto encriptação é bidirecional (exige uma chave para desencriptar).",
+        "OAuth2 é o padrão da indústria para autorização delegada, permitindo que os utilizadores façam login com o GitHub ou Google sem partilharem a sua senha."
+      ]
+    },
+    {
+      "pattern": "(registradores|cpu|paginação|mmu|ram)",
+      "responses": [
+        "A MMU (Memory Management Unit) traduz endereços virtuais para endereços físicos usando tabelas de páginas (page tables).",
+        "A hierarquia de memória é um jogo de compromissos: registadores da CPU são ultrarrápidos e minúsculos, enquanto a RAM é maior mas mais lenta.",
+        "No desenvolvimento do teu kernel, configurar a paginação de 64 bits (Paging) é o passo crucial para proteger a memória e habilitar o modo de 64-bit."
+      ]
+    },
+    {
+      "pattern": "(ifsuldeminas|estudo|faculdade|instituto|professor)",
+      "responses": [
+        "O IFSulDeminas oferece uma excelente base técnica. Aproveitar os laboratórios e desenvolver projetos práticos paralelos é o diferencial!",
+        "Estudar num Instituto Federal dá acesso a professores qualificados e oportunidades de iniciação científica ou extensão.",
+        "A combinação do conhecimento académico do IFSulDeminas com projetos de código aberto cria um currículo de alto impacto!"
+      ]
+    },
+    {
+      "pattern": "(documentação|readme|diagrama|c4 model|mermaid)",
+      "responses": [
+        "Usa o Mermaid.js no teu Markdown para criar diagramas de sequência e de arquitetura diretamente no teu README do GitHub sem precisar de imagens externas!",
+        "O Modelo C4 divide a arquitetura em 4 níveis: Contexto, Contentores, Componentes e Código. É a forma mais clara de explicar um sistema.",
+        "Código limpo é autoexplicativo para o *como*, mas a documentação e os comentários servem para explicar o *porquê* de uma decisão técnica."
+      ]
+    },
+    {
+      "pattern": "(produtividade|pomo|foco|organização|trello)",
+      "responses": [
+        "A técnica Pomodoro (25 minutos de foco total, 5 de pausa) ajuda a manter a concentração ao resolver problemas difíceis de lógica.",
+        "A regra dos 2 minutos: se uma tarefa simples (como responder a um e-mail ou corrigir um aviso no terminal) leva menos de 2 minutos, faz logo.",
+        "A melhor ferramenta de produtividade para um programador é saber dizer 'não' a distrações durante blocos de trabalho focado (deep work)."
+      ]
+    },
+    {
+      "pattern": "(tcp|udp|ip|dns|rede|protocolo)",
+      "responses": [
+        "TCP garante a entrega de pacotes na ordem correta, sendo ideal para a web e APIs. UDP foca em velocidade sem confirmação de receção, perfeito para jogos e streaming em tempo real.",
+        "O DNS é essencialmente a lista de contactos da internet: traduz nomes de domínio amigáveis (como vercel.app) em endereços IP numéricos.",
+        "Ao criar sockets em C para o teu sistema operativo ou em Go para um servidor, entender o 'handshake' de três vias do TCP é essencial."
+      ]
+    },
+    {
+      "pattern": "(compilador|lexer|parser|ast|interpretador)",
+      "responses": [
+        "Um compilador transforma código fonte em código de máquina através de várias fases: análise léxica (Lexer), análise sintática (Parser) para gerar uma Árvore de Sintaxe Abstrata (AST) e geração de código.",
+        "A Árvore de Sintaxe Abstrata (AST) é a representação estruturada do teu código. É o que permite aos linters e formatadores analisarem erros antes da execução.",
+        "Linguagens interpretadas executam instrução por instrução em tempo de execução, enquanto linguagens compiladas (como Rust, Go e C) geram binários nativos de alta performance."
+      ]
+    },
+    {
+      "pattern": "(hexagonal|ports and adapters|portas e adaptadores)",
+      "responses": [
+        "A Arquitetura Hexagonal (Ports and Adapters) garante que o teu domínio não sabe se a entrada vem de uma API REST, CLI ou teste, nem se a saída vai para PostgreSQL ou ficheiro JSON.",
+        "As 'Portas' definem as interfaces do que o sistema precisa, e os 'Adaptadores' implementam essas conexões concretas. É o auge da inversão de dependência!",
+        "Manter o núcleo da aplicação isolado do mundo exterior permite trocar de banco de dados ou framework web sem reescrever uma única regra de negócio."
+      ]
+    },
+    {
+      "pattern": "(garbage collector|gc|rust|c|gestão de memória)",
+      "responses": [
+        "Linguagens com Garbage Collector (como Go, Java e Python) limpam a memória automaticamente, mas introduzem pausas no processamento. Em C e Rust, a memória é gerida manualmente ou por Ownership.",
+        "O modelo de Ownership e Borrow Checker do Rust garante segurança de memória em tempo de compilação sem precisar de um Garbage Collector a correr em background.",
+        "No desenvolvimento do kernel do teu OS, não há Garbage Collector! Cada bloco de memória alocado com malloc deve ter um free correspondente para evitar fugas de memória (memory leaks)."
+      ]
+    },
+    {
+      "pattern": "(rate limit|throttling|ddos|sanitização)",
+      "responses": [
+        "Implementar Rate Limiting na tua API (por exemplo, usando Redis) previne que utilizadores maliciosos ou robôs derrubem o servidor com milhares de requisições por segundo.",
+        "Sanitizar entradas de dados é a primeira regra de segurança web: strip de tags HTML perigosas para evitar XSS e parametrização de consultas para bloquear SQL Injection.",
+        "Proteger a tua aplicação contra DDoS exige combinar CDNs (como Cloudflare), firewalls de aplicação (WAF) e boa gestão de recursos no servidor."
+      ]
+    },
+    {
+      "pattern": "(observabilidade|prometheus|grafana|logs|metrics)",
+      "responses": [
+        "Logs estruturados (em formato JSON) facilitam a filtragem e análise de erros em produção usando ferramentas de agregação.",
+        "Os três pilares da observabilidade são: Métricas (o que está a acontecer), Logs (por que aconteceu) e Traces (onde aconteceu no fluxo de microsserviços).",
+        "Monitorizar métricas como tempo de resposta (latência), taxa de erro e utilização de CPU/RAM permite identificar gargalos antes que os utilizadores os sintam."
+      ]
+    },
+    {
+      "pattern": "(env|variáveis de ambiente|secrets|vault)",
+      "responses": [
+        "Nunca cometes credenciais, chaves de API ou senhas de banco de dados no teu repositório Git! Usa ficheiros .env locais e adiciona-os ao .gitignore.",
+        "Na Vercel e no GitHub Actions, deves configurar as tuas chaves em 'Environment Variables' ou 'Secrets' para que fiquem encriptadas e seguras.",
+        "O ficheiro .env.example deve ir para o Git apenas com os nomes das variáveis (sem valores reais) para servir de guia para outros desenvolvedores."
+      ]
+    },
+    {
+      "pattern": "(active record|repository pattern|orm|mapeamento)",
+      "responses": [
+        "O padrão Active Record mistura a lógica de negócio com a persistência na própria classe da entidade. É rápido para protótipos, mas pode dificultar o desacoplamento em sistemas grandes.",
+        "O Repository Pattern separa completamente a lógica de domínio do mecanismo de persistência, facilitando a troca de base de dados e a criação de mocks para testes.",
+        "A escolha entre Active Record e Repository Pattern depende da complexidade do teu domínio e da necessidade de manter o código testável a longo prazo."
+      ]
+    },
+    {
+      "pattern": "(sistemas de arquivos|ext4|fat32|vfs|virtual file system)",
+      "responses": [
+        "Um Virtual File System (VFS) é uma camada de abstração no kernel que permite ao sistema operativo manipular diferentes sistemas de ficheiros (EXT4, FAT32) através de uma API unificada.",
+        "No desenvolvimento de um SO, implementar suporte a leitura de tabelas FAT32 é frequentemente o primeiro passo para conseguir ler ficheiros do disco rígido.",
+        "Inodes contêm metadados sobre ficheiros (permissões, tamanho, blocos de disco), mas não contêm o nome do ficheiro nem os dados diretamente."
+      ]
+    },
+    {
+      "pattern": "(event loop|non blocking|assíncrono|node|single thread)",
+      "responses": [
+        "O Event Loop do Node.js permite processar milhares de conexões concorrentes numa única thread, delegando operações I/O (disco, rede) para o sistema operativo.",
+        "Nunca bloqueies o Event Loop com operações intensivas de CPU em Node.js! Para tarefas pesadas de cálculo, usa Worker Threads ou microsserviços em Go/Rust.",
+        "Entender as fases do Event Loop (timers, I/O callbacks, poll, check) ajuda a diagnosticar comportamentos inesperados em código assíncrono."
+      ]
+    },
+    {
+      "pattern": "(canary|blue green|rolling update|deploy strategy)",
+      "responses": [
+        "O deploy Blue-Green mantém dois ambientes idênticos em produção: um atende o tráfego atual (Blue) enquanto a nova versão é testada no outro (Green) antes da troca instantânea.",
+        "O Canary Deployment lança a nova versão da aplicação para apenas uma pequena percentagem de utilizadores (ex: 5%) antes de atualizar todo o sistema.",
+        "Rolling Updates atualizam instâncias da aplicação gradualmente, garantindo zero downtime sem precisar de duplicar a infraestrutura inteira."
+      ]
+    },
+    {
+      "pattern": "(heap|stack|fila de prioridade|árvore b|trie)",
+      "responses": [
+        "A memória Stack é rápida e gerida automaticamente para variáveis locais de funções, enquanto a Heap é usada para alocações dinâmicas de tamanho variável.",
+        "Árvores B (B-Trees) são amplamente utilizadas em bases de dados e sistemas de ficheiros porque minimizam as operações de leitura e escrita em disco.",
+        "Uma Trie (árvore de prefixos) é a estrutura de dados ideal para implementar funcionalidades de auto-completar e pesquisa rápida de palavras."
+      ]
+    },
+    {
+      "pattern": "(pacotes|npm|cargo|pip|go modules|dependências)",
+      "responses": [
+        "O ficheiro lock (package-lock.json, Cargo.lock) garante que todos os membros da equipa e o servidor de CI/CD instalem exatamente as mesmas versões de dependências.",
+        "Evita adicionar dependências externas para tarefas simples que podes resolver com poucas linhas de código. Cada pacote traz risco de segurança e manutenção.",
+        "Auditar as tuas dependências regularmente com comandos como npm audit previne vulnerabilidades conhecidas no teu projeto."
+      ]
+    },
+    {
+      "pattern": "(requisitos|user stories|casos de uso|escopo)",
+      "responses": [
+        "User Stories no formato 'Como [papel], eu quero [ação] para que [benefício]' ajudam a manter o foco no valor real entregue ao utilizador.",
+        "Definir critérios de aceitação claros antes de começar a codificar evita retrabalho e garante que a equipa alinha expectativas.",
+        "Controlar o escopo do projeto (Scope Creep) é essencial para entregar software dentro do prazo em vez de tentar colocar todas as funcionalidades de uma vez."
+      ]
+    },
+    {
+      "pattern": "(vm|virtual machine|container|hypervisor)",
+      "responses": [
+        "Virtual Machines emulam um sistema de hardware completo através de um Hypervisor, correndo um SO convidado completo sobre o SO hospedeiro.",
+        "Contentores (Containers) partilham o mesmo kernel do SO hospedeiro e isolam apenas os processos, tornando-os muito mais leves e rápidos a arrancar que VMs.",
+        "No desenvolvimento do teu kernel, testar a compilação numa VM como o QEMU é a forma mais segura e rápida de fazer depuração antes de testar em hardware real."
+      ]
+    },
+    {
+      "pattern": "(rest vs graphql|grpc vs rest|comunicação)",
+      "responses": [
+        "REST é excelente para APIs públicas e padronizadas. gRPC é ideal para comunicação entre microsserviços internos devido à alta performance do Protobuf sobre HTTP/2.",
+        "GraphQL brilha em interfaces onde o cliente precisa de compor dados de múltiplas fontes numa única requisição, evitando múltiplas chamadas REST.",
+        "A escolha do protocolo de comunicação deve basear-se no volume de tráfego, na latência exigida e no tipo de clientes que vão consumir a API."
+      ]
+    },
+    {
+      "pattern": "(limite|memória de vídeo|gpu|cpu)",
+      "responses": [
+        "Não precisar de GPU é uma das maiores vantagens de sistemas baseados em regras e linguagens compiladas leves: correm em qualquer hardware com eficiência máxima!",
+        "A otimização de CPU e RAM permite que projetos como o teu corram com performance perfeita mesmo em servidores de plano gratuito como a Vercel.",
+        "Focar em algoritmos eficientes no CPU demonstra um domínio profundo de Engenharia de Software antes de recorrer a soluções pesadas de hardware."
+      ]
+    },
+    {
+      "pattern": "(microfrontend|module federation|mfe)",
+      "responses": [
+        "Microfrontends dividem uma aplicação web grande em pedaços independentes geridos por equipas distintas, usando ferramentas como Module Federation.",
+        "Cuidado ao usar Microfrontends: eles trazem complexidade de infraestrutura e risco de duplicação de dependências no browser se não forem bem geridos.",
+        "Se a tua equipa é pequena, um monólito frontend bem estruturado costuma ser uma escolha muito mais eficiente do que Microfrontends."
+      ]
+    },
+    {
+      "pattern": "(wasm|webassembly|c em web|rust em web)",
+      "responses": [
+        "WebAssembly (Wasm) permite executar código compilado (C, C++, Rust, Go) no browser a velocidades próximas das nativas.",
+        "Wasm não veio substituir o JavaScript, mas sim trabalhar em conjunto com ele para tarefas pesadas como edição de vídeo, jogos 3D e manipulação de imagem.",
+        "Compilar Rust para WebAssembly é uma excelente forma de trazer algoritmos de alta performance para o teu frontend web."
+      ]
+    },
+    {
+      "pattern": "(sse|server sent events|event source)",
+      "responses": [
+        "Server-Sent Events (SSE) mantêm uma ligação HTTP unidirecional perfeita para enviar streams de dados do servidor para o cliente (como respostas de chats de IA).",
+        "Diferente do WebSocket (que é bidirecional), o SSE usa o protocolo HTTP padrão e inclui reconexão automática nativa no browser.",
+        "Para dashboards de métricas ou chats onde apenas o servidor envia atualizações contínuas, SSE é muito mais simples de implementar do que WebSockets."
+      ]
+    },
+    {
+      "pattern": "(bounded context|agregado|aggregate|ddd avançado)",
+      "responses": [
+        "No Domain-Driven Design (DDD), um Bounded Context define a fronteira onde um modelo de domínio específico se aplica com um significado bem definido.",
+        "Um Agregado no DDD é um grupo de objetos de domínio que devem ser tratados como uma única unidade para garantir a consistência dos dados.",
+        "Manter limites explícitos entre Bounded Contexts evita que conceitos do sistema se misturem e criem acoplamento desnecessário."
+      ]
+    },
+    {
+      "pattern": "(filas|rabbitmq|kafka|sqs|mensageria)",
+      "responses": [
+        "Sistemas de mensageria como RabbitMQ ou AWS SQS garantem resiliência: se um serviço cair, as mensagens ficam na fila até que ele recupere.",
+        "O Apache Kafka brilha na gestão de fluxos de eventos (event streaming) em tempo real com retenção de dados e alta capacidade de processamento.",
+        "Usar filas é a chave para desacoplar tarefas demoradas (como envio de e-mails ou processamento de vídeos) do fluxo principal da tua API."
+      ]
+    },
+    {
+      "pattern": "(nginx|caddy|haproxy|proxy reverso|load balancer)",
+      "responses": [
+        "Um Proxy Reverso como o Nginx ou Caddy fica à frente das tuas aplicações tratando de SSL/TLS, compressão e reencaminhamento de tráfego.",
+        "O Caddy destaca-se pela facilidade de utilização e pela renovação automática de certificados HTTPS com Let's Encrypt por padrão.",
+        "Load Balancers distribuem as requisições recebidas entre múltiplos servidores de backend para garantir alta disponibilidade e tolerância a falhas."
+      ]
+    },
+    {
+      "pattern": "(lifetimes|borrowing|ownership|rust avançado)",
+      "responses": [
+        "Os Lifetimes em Rust indicam ao compilador quanto tempo uma referência a um dado permanece válida, evitando referências pendentes (dangling pointers).",
+        "O conceito de Borrowing permite aceder a dados sem tomar a sua posse (ownership), podendo ser empréstimos imutáveis múltiplos ou um único mutável.",
+        "Superar a curva de aprendizagem do Borrow Checker do Rust vale a pena: ficas com a garantia de código seguro contra corridas de dados (data races)."
+      ]
+    },
+    {
+      "pattern": "(sinais|sigterm|sigkill|processos linux)",
+      "responses": [
+        "O sinal SIGTERM (15) pede educadamente a um processo para terminar, permitindo-lhe fechar conexões e guardar dados (Graceful Shutdown).",
+        "O sinal SIGKILL (9) força o encerramento imediato do processo pelo kernel do Linux, sem dar oportunidade ao programa de limpar recursos.",
+        "Saber tratar o SIGTERM na tua aplicação garante que os teus pods no Kubernetes ou contentores Docker encerrem sem perder transações ativas."
+      ]
+    },
+    {
+      "pattern": "(escalonador|scheduler|round robin|prioridade|kernel scheduler)",
+      "responses": [
+        "O escalonador de processos do kernel decide qual programa utiliza a CPU a cada momento, usando algoritmos como Round Robin ou Prioridade Dinâmica.",
+        "Em sistemas de tempo real (RTOS), o escalonamento determinístico é vital: tarefas de alta prioridade têm de interromper tarefas comuns instantaneamente.",
+        "Implementar um escalonador simples no Carlinho OS é um dos passos mais fascinantes para transformar um código num verdadeiro sistema operativo multitarefa!"
+      ]
+    },
+    {
+      "pattern": "(ssg|ssr|isr|rendering web)",
+      "responses": [
+        "Static Site Generation (SSG) gera o HTML em tempo de compilação, oferecendo a máxima velocidade e segurança para sites e blogs.",
+        "Server-Side Rendering (SSR) constrói o HTML no servidor a cada requisição, sendo ideal para páginas dinâmicas que exigem dados atualizados em tempo real.",
+        "Incremental Static Regeneration (ISR) permite atualizar páginas estáticas em background sem precisar de reconstruir o site inteiro."
+      ]
+    },
+    {
+      "pattern": "(zustand|redux|pinia|estado global)",
+      "responses": [
+        "Ferramentas de gestão de estado como Zustand ou Pinia mantêm os dados partilhados entre componentes sincronizados sem criar re-renderizações desnecessárias.",
+        "Usa estado global apenas para dados verdadeiramente partilhados (como sessão de utilizador ou tema). Estado local de componentes deve ficar no componente!",
+        "O Redux Toolkit simplificou muito a utilização do Redux, mas soluções mais leves como o Zustand costumam ser suficientes para a maioria dos projetos."
+      ]
+    },
+    {
+      "pattern": "(semver|versionamento|major|minor|patch)",
+      "responses": [
+        "No SemVer (MAJOR.MINOR.PATCH), incrementas o PATCH para correções de bugs, MINOR para novas funcionalidades compatíveis, e MAJOR para mudanças que quebram a compatibilidade.",
+        "Respeitar o versionamento semântico garante que os utilizadores das tuas bibliotecas possam atualizar dependências sem medo de quebrar o sistema.",
+        "Com o GitHub Actions, podes automatizar a criação de tags de versão e releases sempre que fazes merge na branch principal."
+      ]
+    },
+    {
+      "pattern": "(cors|preflight|access control allow origin)",
+      "responses": [
+        "Uma requisição Preflight (HTTP OPTIONS) é enviada pelo browser antes da chamada real para verificar se o servidor autoriza a origem que está a fazer o pedido.",
+        "O erro de CORS é uma funcionalidade de segurança do navegador, não do servidor. Ele impede que sites maliciosos façam requisições em teu nome.",
+        "Para resolver CORS na produção, configura o cabeçalho Access-Control-Allow-Origin no backend para aceitar apenas os domínios confiáveis."
+      ]
+    },
+    {
+      "pattern": "(feature flag|feature toggle|unleash)",
+      "responses": [
+        "Feature Flags permitem ativar ou desativar funcionalidades em produção em tempo real sem precisar de fazer um novo deploy.",
+        "Usar Feature Flags facilita a implementação de testes A/B e permite lançamentos graduais de código para grupos específicos de utilizadores.",
+        "Lembra-te de remover Feature Flags antigas do código após o lançamento definitivo para evitar acumular débito técnico no repositório."
+      ]
+    },
+    {
+      "pattern": "(service worker|pwa|progressive web app|offline)",
+      "responses": [
+        "Service Workers correm em segundo plano no browser, interceptando requisições de rede para permitir que a tua aplicação web funcione totalmente offline.",
+        "Transformar uma aplicação web num Progressive Web App (PWA) permite instalá-la no dispositivo móvel ou desktop como se fosse um aplicativo nativo.",
+        "Estratégias de cache com Service Worker (como Cache First ou Network First) devem ser escolhidas de acordo com a frequência de atualização dos dados."
+      ]
+    },
+    {
+      "pattern": "(pato de borracha|rubber duck|explicar o código)",
+      "responses": [
+        "O método do Pato de Borracha funciona porque força o teu cérebro a desacelerar e estruturar o pensamento para explicar o problema a alguém (ou a algo!).",
+        "Quando estiveres preso num bug no Carlinho OS ou num algoritmo, tenta detalhar cada linha para o DevBot. O simples ato de escrever o problema costuma revelar o erro.",
+        "Muitos erros acontecem devido a pressupostos falsos que fazemos sobre o código. Explicar passo a passo destrói esses pressupostos."
+      ]
+    },
+    {
+      "pattern": "(graphql vs rest|apollo|schema graphql)",
+      "responses": [
+        "O GraphQL resolve o problema de over-fetching ao permitir que o cliente especifique os campos exatos de que precisa num único endpoint HTTP.",
+        "Desenhar um esquema GraphQL exige ponderar a complexidade das consultas para evitar que clientes executem queries aninhadas infinitas e sobrecarreguem o servidor.",
+        "Ferramentas como Apollo Client facilitam o armazenamento em cache e a gestão do estado do cliente quando se consomem APIs GraphQL."
+      ]
+    },
+    {
+      "pattern": "(benchmarking|profiling|flamegraph|pprof|criterion)",
+      "responses": [
+        "Não otimizes código sem medir primeiro! Ferramentas de profiling (como pprof em Go ou Criterion em Rust) revelam onde a CPU realmente perde tempo.",
+        "Flamegraphs visualizam a pilha de chamadas e o consumo de recursos, permitindo identificar gargalos de CPU e memória num relance.",
+        "Ao fazer benchmarking, isola o ambiente e executa múltiplos ciclos para garantir que variações do sistema operativo não distorçam os resultados."
+      ]
+    },
+    {
+      "pattern": "(design system|storybook|tokens|atomic design)",
+      "responses": [
+        "Um Design System garante consistência visual e comportamental entre equipas, definindo componentes reutilizáveis, tipografia e tokens de cor.",
+        "O Storybook permite desenvolver e testar componentes de UI isoladamente da aplicação principal, acelerando o fluxo de trabalho no frontend.",
+        "O Atomic Design organiza componentes em Átomos, Moléculas, Organismos, Modelos e Páginas, promovendo um reaproveitamento estruturado."
+      ]
+    },
+    {
+      "pattern": "(serverless database|planetscale|neon|supabase|dynamodb)",
+      "responses": [
+        "Bases de dados serverless adaptam a escala e a capacidade automaticamente de acordo com o tráfego, eliminando a gestão manual de instâncias.",
+        "O Supabase oferece uma alternativa open-source ao Firebase com todo o poder do PostgreSQL relacional, incluindo suporte a tempo real e autenticação.",
+        "O DynamoDB brilha em aplicações com padrões de acesso previsíveis que exigem latência de milissegundos a qualquer escala."
+      ]
+    },
+    {
+      "pattern": "(zero downtime|health check|liveness|readiness)",
+      "responses": [
+        "Sondas de Liveness verificam se a aplicação está a correr, enquanto sondas de Readiness confirmam se está pronta para receber tráfego real.",
+        "Para garantir zero downtime, o novo servidor só deve receber requisições do load balancer após passar com sucesso os testes de health check.",
+        "Health checks bem desenhados devem validar dependências essenciais (como a conexão à base de dados) sem expor detalhes sensíveis da infraestrutura."
+      ]
+    },
+    {
+      "pattern": "(monorepo|nx|turborepo|lerna)",
+      "responses": [
+        "Um Monorepo guarda múltiplos projetos ou pacotes num único repositório Git, facilitando a partilha de código e refatorações globais.",
+        "Ferramentas como Turborepo e Nx otimizam compilações em monorepos usando armazenamento em cache inteligente para executar tarefas em paralelo.",
+        "A escolha entre Monorepo e Multirepo depende da cultura da equipa, da frequência de partilha de código e da maturidade das pipelines de CI/CD."
+      ]
+    },
+    {
+      "pattern": "(grpc|protobuf|protocol buffers|rpc)",
+      "responses": [
+        "O gRPC utiliza Protocol Buffers (Protobuf) para serializar dados em formato binário compacto, sendo drasticamente mais rápido que JSON sobre REST.",
+        "Com gRPC, podes definir o contrato da API num ficheiro .proto e gerar automaticamente o código do cliente e servidor em múltiplas linguagens.",
+        "A comunicação bidirecional por streaming do gRPC sobre HTTP/2 é ideal para microsserviços de alto desempenho e sistemas distribuídos."
+      ]
+    },
+    {
+      "pattern": "(dry run|staging|ambiente de homologação|produção)",
+      "responses": [
+        "Testar mudanças num ambiente de Staging idêntico ao de produção reduz drasticamente o risco de surpresas desagradáveis durante o lançamento.",
+        "Executar scripts em modo 'Dry Run' valida a lógica e prevê o impacto de operações destrutivas antes de aplicar alterações reais aos dados.",
+        "Nunca faças testes ou alterações de esquema diretamente na base de dados de produção sem backups validados e um plano de rollback."
+      ]
+    },
+    {
+      "pattern": "(virtual dom|diffing algorithm|reconciliation)",
+      "responses": [
+        "O Virtual DOM é uma representação em memória da árvore do DOM real, usada para calcular alterações mínimas antes de atualizar a página.",
+        "O algoritmo de reconciliação (diffing) compara a árvore atual com a nova e aplica apenas as modificações necessárias, poupando renderizações pesadas.",
+        "Entender como as chaves ('key') ajudam o algoritmo de reconciliação no React evita problemas de performance ao renderizar listas grandes."
+      ]
+    },
+    {
+      "pattern": "(jwt vs session|cookies vs token|httponly)",
+      "responses": [
+        "Guardar tokens JWT em cookies HttpOnly e Secure protege contra ataques XSS, impedindo que scripts maliciosos leiam a sessão no browser.",
+        "Sessões no servidor exigem armazenamento centralizado (como Redis) para validar pedidos, enquanto tokens JWT são autocontidos e estateless.",
+        "A principal limitação dos tokens JWT estateless é a revogação imediata: desautenticar um utilizador antes do token expirar exige uma lista de bloqueio."
+      ]
+    },
+    {
+      "pattern": "(cqrs|event sourcing|read model|write model)",
+      "responses": [
+        "CQRS (Command Query Responsibility Segregation) separa as operações de escrita (comandos) das de leitura (consultas), otimizando a performance de ambas.",
+        "No Event Sourcing, o estado da aplicação não é sobrescrito, mas sim derivado de uma sequência imutável de eventos armazenados cronologicamente.",
+        "Combinar CQRS com Event Sourcing permite reconstruir o estado de qualquer entidade num momento específico do passado para auditorias completas."
+      ]
+    },
+    {
+      "pattern": "(deadlock|race condition|mutex|lock|semaphore)",
+      "responses": [
+        "Uma Race Condition acontece quando múltiplos threads acedem a recursos partilhados em simultâneo e o resultado depende da ordem imprevista de execução.",
+        "Deadlock ocorre quando dois ou mais processos ficam bloqueados indefinidamente, cada um à espera que o outro liberte um recurso bloqueado.",
+        "Usar Mutexes ou Semáforos protege secções críticas de código em concorrência, mas exige rigor para evitar bloqueios permanentes e degradação de velocidade."
+      ]
+    },
+    {
+      "pattern": "(load testing|k6|artillery|jmeter|stress test)",
+      "responses": [
+        "Testes de carga com ferramentas como k6 simulam milhares de utilizadores virtuais para avaliar como a API se comporta sob tráfego intenso.",
+        "O objetivo do Stress Testing é empurrar o sistema até ao limite de rutura para identificar o ponto exato de falha e como a infraestrutura recupera.",
+        "Analisar a latência nos percentis p95 e p99 durante testes de carga revela a experiência real dos utilizadores mais afetados por lentidão."
+      ]
+    },
+    {
+      "pattern": "(clean code em js|js funcional|pure functions|immutability)",
+      "responses": [
+        "Funções puras devolvem sempre o mesmo resultado para os mesmos argumentos e não produzem efeitos secundários, facilitando os testes e a previsão de erros.",
+        "A imutabilidade impede que objetos e arrays sejam alterados diretamente, reduzindo bugs difíceis de rastrear em sistemas com estado partilhado.",
+        "Escrever JavaScript declarativo usando métodos como .map(), .filter() e .reduce() torna o código mais expressivo do que loops imperativos manuais."
+      ]
+    },
+    {
+      "pattern": "(git hooks|husky|lint-staged|commitlint)",
+      "responses": [
+        "Git Hooks são scripts automatizados que correm em eventos específicos do Git (como pre-commit ou commit-msg) para garantir padrões no repositório.",
+        "O Husky facilita a configuração de hooks no Git, permitindo executar linters e formatadores automaticamente antes que o código seja comitado.",
+        "Com o commitlint, garantes que todas as mensagens de commit seguem a convenção estipulada antes de entrarem no histórico da equipa."
+      ]
+    },
+    {
+      "pattern": "(architecture decision record|adr|documentando arquitetura)",
+      "responses": [
+        "Um Architecture Decision Record (ADR) documenta uma escolha técnica relevante, o contexto, as alternativas consideradas e as consequências da decisão.",
+        "Guardar ADRs no repositório de código garante que futuros membros da equipa entendam o porquê de certas escolhas arquiteturais históricas.",
+        "Bons ADRs evitam discussões repetitivas sobre decisões que já foram tomadas e justificadas com base em requisitos anteriores."
+      ]
+    },
   ]
 }
