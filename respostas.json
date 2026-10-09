@@ -18,15 +18,15 @@
     {
       "pattern": "meu nome é (.*)",
       "responses": [
-        "Nice to meet you, \$1! What are you building today?",
-        "Hello \$1! Do you need help with your software architecture?"
+        "Nice to meet you, $1! What are you building today?",
+        "Hello $1! Do you need help with your software architecture?"
       ]
     },
     {
       "pattern": "como (faço|fazer) (.*)",
       "responses": [
-        "To do \$2, the approach depends on the language. Can you provide more context?",
-        "Doing \$2 requires breaking the problem down into steps. Have you tried designing the architecture first?"
+        "To do $2, the approach depends on the language. Can you provide more context?",
+        "Doing $2 requires breaking the problem down into steps. Have you tried designing the architecture first?"
       ]
     },
     {
@@ -39,8 +39,8 @@
     {
       "pattern": "(python|go|rust|html|css|javascript|php|java)",
       "responses": [
-        "\$1 is an excellent technology! Where are you applying it?",
-        "I really like architectures involving \$1. If you'd like, I can give you some ideas for design patterns to use."
+        "$1 is an excellent technology! Where are you applying it?",
+        "I really like architectures involving $1. If you'd like, I can give you some ideas for design patterns to use."
       ]
     },
     {
